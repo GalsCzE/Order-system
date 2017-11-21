@@ -12,20 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Order66.Framy;
 
 namespace Order66
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro Registration.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Registration : Page
     {
-        public MainWindow()
+        public Registration()
         {
             InitializeComponent();
-            BackEnd.frame = frame;
-            BackEnd.frame.Navigate(new Registration());
+        }
+
+        private void registr_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void traceLogin_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,26 @@
+﻿<Page x:Class="Order66.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Order66"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="Registration">
+
+    <Grid>
+        <StackPanel>
+            <Label x:Name="registrationNadpis" Content="Registrace" HorizontalContentAlignment="Center" FontSize="30"></Label>
+            <Label Width="100" HorizontalContentAlignment="Center">Jméno</Label>
+            <TextBox x:Name="registrationName" Width="100"></TextBox>
+            <Label Width="100" HorizontalContentAlignment="Center">Příjmení</Label>
+            <TextBox x:Name="registrationSurname" Width="100"></TextBox>
+            <Label Width="100" HorizontalContentAlignment="Center">Login</Label>
+            <TextBox x:Name="registrationLogin" Width="100"></TextBox>
+            <Label Width="100" HorizontalContentAlignment="Center">Heslo</Label>
+            <TextBox x:Name="registrationPassword" Width="100"></TextBox>
+            <Button x:Name="registr" Click="registr_Click" Margin="0,15,0,0" Content="Registrovat" FontSize="15"/>
+            <Button x:Name="traceLogin" Click="traceLogin_Click" Width="100" Content="Přihlásit se" HorizontalAlignment="Right" Margin="0,114,0,0" />
+        </StackPanel>
+    </Grid>
+</Page>
