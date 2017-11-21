@@ -16,16 +16,21 @@ using System.Windows.Shapes;
 namespace Order66
 {
     /// <summary>
-    /// Interakční logika pro LoginUser.xaml
+    /// Interakční logika pro ShopList.xaml
     /// </summary>
-    public partial class LoginUser : Page
+    public partial class ShopList : Page
     {
-        public LoginUser()
+        public ShopList()
         {
             InitializeComponent();
         }
 
-        private void logining_Click(object sender, RoutedEventArgs e)
+        private void shopItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void shopCart_Click(object sender, RoutedEventArgs e)
         {
 
         }
