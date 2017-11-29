@@ -12,7 +12,12 @@
         <StackPanel>
             <Button x:Name="shopsCart" Content="Košík" Click="shopsCart_Click" />
             <Button x:Name="shopsInfo" Content="Informace" Click="shopsInfo_Click" />
-            <ListView x:Name="Produkt_list" SelectionChanged="Produkt_list_SelectionChanged" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="361">
+            <ListView x:Name="Produkt_list" SelectionChanged="Produkt_list_SelectionChanged" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="360">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Typ jidla" Width="150" DisplayMemberBinding="{Binding Nazev}" />
+                    </GridView>
+                </ListView.View>
             </ListView>
         </StackPanel>
     </Grid>

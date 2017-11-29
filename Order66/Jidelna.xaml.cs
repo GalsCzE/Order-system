@@ -41,7 +41,7 @@ namespace Order66
             if (stat == HttpStatusCode.OK)
             {
                 IParse parser = new JsonParser();
-                Produkt_list.ItemsSource = await parser.ParseString<List<User>>(response.Content);
+                Produkt_list.ItemsSource = await parser.ParseString<List<Food>>(response.Content);
             }
             else
             {

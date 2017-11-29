@@ -9,7 +9,7 @@ namespace Order66.Entity
     public class Food
     {
         public int ID { get; set; }
-        public int ID_typu { get; set; }
+        public string Nazev { get; set; }
         public int Cena { get; set; }
         public DateTime Datum { get; set; }
     }
