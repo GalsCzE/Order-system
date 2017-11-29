@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Order66.Framy;
 
 namespace Order66
 {
@@ -27,7 +28,7 @@ namespace Order66
 
         private void logining_Click(object sender, RoutedEventArgs e)
         {
-
+            BackEnd.frame.Navigate(new ShopList());
         }
     }
 }

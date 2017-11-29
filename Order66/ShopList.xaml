@@ -9,10 +9,14 @@
       Title="ShopList">
 
     <Grid>
-        <StackPanel>
+        <ScrollViewer>
+            <StackPanel>
             <Button x:Name="shopItem" Content="Produkty" Click="shopItem_Click"/>
-            <Button x:Name="shopCart" Content="Košík" Click="shopCart_Click" />
-        </StackPanel>
-
+            <Button x:Name="shopInfo" Content="Informace" Click="shopInfo_Click" />
+            <TextBlock x:Name="bumbers" Text="" Margin="350,0,0,0"></TextBlock>
+                <ListView Height="344">
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

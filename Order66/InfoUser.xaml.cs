@@ -12,28 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Order66.Framy;
 
 namespace Order66
 {
     /// <summary>
-    /// Interakční logika pro ShopList.xaml
+    /// Interakční logika pro InfoUser.xaml
     /// </summary>
-    public partial class ShopList : Page
+    public partial class InfoUser : Page
     {
-        public ShopList()
+        public InfoUser()
         {
             InitializeComponent();
-        }
-
-        private void shopItem_Click(object sender, RoutedEventArgs e)
-        {
-            BackEnd.frame.Navigate(new Jidelna());
-        }
-    
-        private void shopInfo_Click(object sender, RoutedEventArgs e)
-        {
-            BackEnd.frame.Navigate(new InfoUser());
         }
     }
 }

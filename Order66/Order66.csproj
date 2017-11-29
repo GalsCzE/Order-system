@@ -62,7 +62,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Entity\User.cs" />
+    <Compile Include="InfoUser.xaml.cs">
+      <DependentUpon>InfoUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Interface\IParse.cs" />
+    <Compile Include="Jidelna.xaml.cs">
+      <DependentUpon>Jidelna.xaml</DependentUpon>
+    </Compile>
     <Compile Include="JsonParsee\JsonParser.cs" />
     <Compile Include="LoginUser.xaml.cs">
       <DependentUpon>LoginUser.xaml</DependentUpon>
@@ -73,6 +79,14 @@
     <Compile Include="ShopList.xaml.cs">
       <DependentUpon>ShopList.xaml</DependentUpon>
     </Compile>
+    <Page Include="InfoUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Jidelna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
