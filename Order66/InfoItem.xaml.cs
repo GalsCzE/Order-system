@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Order66.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,59 +13,52 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Order66.Framy;
 using RestSharp;
+using Newtonsoft.Json;
+using Order66.Framy;
 using System.Net;
 using Order66.Interface;
 using Order66.JsonParsee;
-using Order66.Entity;
 
 namespace Order66
 {
     /// <summary>
-    /// Interakční logika pro Jidelna.xaml
+    /// Interakční logika pro InfoItem.xaml
     /// </summary>
-    public partial class Jidelna : Page
+    public partial class InfoItem : Page
     {
-        public Jidelna()
+        Food f;
+        int ID;
+        public InfoItem(int id)
         {
             InitializeComponent();
-            SHOW();
+            ID = id;
         }
 
-        public async Task SHOW()
+        private void GetFood()
         {
-            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Item/dotaz.php");
+            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Item/dotaz.php?ID=" + ID);
             var request = new RestRequest(Method.GET);
+            request.AddHeader("cache-control", "no-cache");
             IRestResponse response = client.Execute(request);
-            // if (response.ResponseStatus == RestSharp.ResponseStatus.Completed) {
             HttpStatusCode stat = response.StatusCode;
             if (stat == HttpStatusCode.OK)
             {
                 IParse parser = new JsonParser();
-                Produkt_list.ItemsSource = await parser.ParseString<List<Food>>(response.Content);
+                string result = response.Content.Replace(@"[", "");
+                result = result.Replace(@"]", "");
+                f = JsonConvert.DeserializeObject<Food>(result);
             }
             else
             {
                 MessageBox.Show("Špatná stránka!");
                 MessageBox.Show("Nebude to fungovat");
             }
-}
-
-        private void shopsCart_Click(object sender, RoutedEventArgs e)
-        {
-            BackEnd.frame.Navigate(new ShopList());
         }
 
-        private void shopsInfo_Click(object sender, RoutedEventArgs e)
+        private void backintime_Click(object sender, RoutedEventArgs e)
         {
-            BackEnd.frame.Navigate(new InfoUser());
-        }
-
-        private void Produkt_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int id = ((Food)Produkt_list.SelectedItem).ID;
-            BackEnd.frame.Navigate(new InfoItem(id));
+            BackEnd.frame.Navigate(new Jidelna());
         }
     }
 }

@@ -63,6 +63,9 @@
     </ApplicationDefinition>
     <Compile Include="Entity\Food.cs" />
     <Compile Include="Entity\User.cs" />
+    <Compile Include="InfoItem.xaml.cs">
+      <DependentUpon>InfoItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InfoUser.xaml.cs">
       <DependentUpon>InfoUser.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
     <Compile Include="ShopList.xaml.cs">
       <DependentUpon>ShopList.xaml</DependentUpon>
     </Compile>
+    <Page Include="InfoItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InfoUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
