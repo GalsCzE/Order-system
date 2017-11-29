@@ -9,14 +9,12 @@
       Title="ShopList">
 
     <Grid>
-        <ScrollViewer>
-            <StackPanel>
+        <StackPanel>
             <Button x:Name="shopItem" Content="Produkty" Click="shopItem_Click"/>
             <Button x:Name="shopInfo" Content="Informace" Click="shopInfo_Click" />
             <TextBlock x:Name="bumbers" Text="" Margin="350,0,0,0"></TextBlock>
-                <ListView Height="344">
-                </ListView>
-            </StackPanel>
-        </ScrollViewer>
+            <ListView ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="344">
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>

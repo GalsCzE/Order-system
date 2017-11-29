@@ -61,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entity\Food.cs" />
+    <Compile Include="Entity\Typ_food.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="InfoUser.xaml.cs">
       <DependentUpon>InfoUser.xaml</DependentUpon>
