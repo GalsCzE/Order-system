@@ -33,6 +33,11 @@ namespace Order66
         {
             InitializeComponent();
             ID = id;
+            GetFood();
+            Itemid.Content = f.ID;
+            Itemnazev.Content = f.Nazev;
+            Itemcena.Content = f.Cena.ToString() + " Kč";
+            Itemdatum.Content = f.Datum.ToString();
         }
 
         private void GetFood()
