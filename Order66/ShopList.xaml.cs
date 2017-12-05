@@ -35,5 +35,10 @@ namespace Order66
         {
             BackEnd.frame.Navigate(new InfoUser());
         }
+
+        private void BuyAll_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

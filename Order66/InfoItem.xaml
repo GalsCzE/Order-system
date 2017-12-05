@@ -30,6 +30,6 @@
         <TextBlock x:Name="Itemnazev" Grid.Row="2" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
         <TextBlock x:Name="Itemcena" Grid.Row="3" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
         <TextBlock x:Name="Itemdatum" Grid.Row="4" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
-        <Button x:Name="Buyitem" Content="Přidat do košíku" Grid.Row="5" Grid.Column="1" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top"  />
+        <Button x:Name="Buyitem" Content="Přidat do košíku" Grid.Row="5" Grid.Column="1" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Buyitem_Click"  />
     </Grid>
 </Page>

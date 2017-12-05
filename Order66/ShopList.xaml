@@ -9,12 +9,16 @@
       Title="ShopList">
 
     <Grid>
-        <StackPanel>
-            <Button x:Name="shopItem" Content="Produkty" Click="shopItem_Click"/>
-            <Button x:Name="shopInfo" Content="Informace" Click="shopInfo_Click" />
-            <TextBlock x:Name="bumbers" Text="" Margin="350,0,0,0"></TextBlock>
-            <ListView ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="344">
-            </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="336*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="3">
+            <Button x:Name="shopItem" Content="Produkty" Click="shopItem_Click" Height="20"/>
+            <Button x:Name="shopInfo" Content="Informace" Click="shopInfo_Click" Height="20" />
         </StackPanel>
+        <ListView Grid.Row="1" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="344"/>
+        <Button Grid.Row="2" x:Name="BuyAll" Click="BuyAll_Click" Content="Koupit"/>
     </Grid>
 </Page>

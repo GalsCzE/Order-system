@@ -60,5 +60,10 @@ namespace Order66
         {
             BackEnd.frame.Navigate(new Jidelna());
         }
+
+        private void Buyitem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
