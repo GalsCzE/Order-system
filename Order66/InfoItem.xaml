@@ -9,8 +9,27 @@
       Title="InfoItem">
 
     <Grid>
-        <StackPanel>
-            <Button x:Name="backintime" Content="Zpět" Click="backintime_Click" />
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="backintime" Click="backintime_Click" Content="Zpět" Width="100" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top"/>
+        <Label x:Name="ItemID" Content="ID :" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" ></Label>
+        <Label x:Name="Itemname2" Content="Nazev :" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" ></Label>
+        <Label x:Name="ItemMoney" Content="Cena :" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" ></Label>
+        <Label x:Name="ItemDate" Content="Datum přidání :" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" ></Label>
+        <TextBlock x:Name="Itemid" Grid.Row="1" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Itemnazev" Grid.Row="2" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Itemcena" Grid.Row="3" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Itemdatum" Grid.Row="4" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <Button x:Name="Buyitem" Content="Přidat do košíku" Grid.Row="5" Grid.Column="1" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top"  />
     </Grid>
 </Page>

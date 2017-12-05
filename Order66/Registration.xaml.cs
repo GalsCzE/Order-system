@@ -54,6 +54,8 @@ namespace Order66
                 registrationSurname.Text = "";
                 registrationLogin.Text = "";
                 registrationPassword.Password = "";
+
+                BackEnd.frame.Navigate(new LoginUser());
             }
             catch
             {

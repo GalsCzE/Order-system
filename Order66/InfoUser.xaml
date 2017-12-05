@@ -5,10 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Order66"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="400" d:DesignWidth="400"
       Title="InfoUser">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="72*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="back" Content="Zpět" Width="100" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Click="back_Click" />
+        <Label Grid.Row="1" x:Name="Username" Content="Jméno :" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="2" x:Name="Usersurname" Content="Příjmení :" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="3" x:Name="Userlogin" Content="Login :" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="4" x:Name="Userpassword" Content="Heslo :" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <TextBlock x:Name="Userjmeno" Grid.Row="1" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Userprijmeni" Grid.Row="2" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Userlog" Grid.Row="3" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Userheslo" Grid.Row="4" Grid.Column="1" Width="150" TextAlignment="Center"></TextBlock>
         
     </Grid>
 </Page>
