@@ -14,7 +14,7 @@
             <Label Width="100" HorizontalContentAlignment="Center">Login</Label>
             <TextBox x:Name="loginLogin" Width="100"></TextBox>
             <Label Width="100" HorizontalContentAlignment="Center">Heslo</Label>
-            <PasswordBox PasswordChar="*" x:Name="loginPassword" Width="100"></PasswordBox>
+            <TextBox x:Name="loginPassword" Width="100"></TextBox>
             <Button x:Name="logining" Content="Přihlásit" FontSize="15" Margin="0,10,0,0" Click="logining_Click"/>
         </StackPanel>
     </Grid>
