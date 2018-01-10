@@ -65,7 +65,7 @@ namespace Order66
 
         private void traceLogin_Click(object sender, RoutedEventArgs e)
         {
-            BackEnd.frame.Navigate(new LoginUser());
+            BackEnd.frame.Navigate(new Jidelna());
         }
     }
 }

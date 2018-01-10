@@ -68,7 +68,26 @@ namespace Order66
 
         private void Buyitem_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                KART usa = new KART();
+                usa.Uzivatel = 0;
+                usa.Produkt = f.ID;
 
+                string url = "https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Users/Insert_Kart.php";
+                var client = new RestClient(url);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("cache-control", "no-cache");
+                request.AddHeader("content-type", "application/json");
+                request.AddParameter("application/json", Newtonsoft.Json.JsonConvert.SerializeObject(usa), ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+
+                MessageBox.Show("Máš to v košíku!");
+            }
+            catch
+            {
+                MessageBox.Show("Vyskytla se chyba");
+            }
         }
     }
 }

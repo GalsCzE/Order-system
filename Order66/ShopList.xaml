@@ -18,7 +18,15 @@
             <Button x:Name="shopItem" Content="Produkty" Click="shopItem_Click" Height="20"/>
             <Button x:Name="shopInfo" Content="Informace" Click="shopInfo_Click" Height="20" />
         </StackPanel>
-        <ListView Grid.Row="1" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="344"/>
+        <ListView x:Name="Produkt" Grid.Row="1" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="344">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding ID}" />
+                    <GridViewColumn Header="Uzivatel" Width="150" DisplayMemberBinding="{Binding Uzivatel}" />
+                    <GridViewColumn Header="Produkt" Width="150" DisplayMemberBinding="{Binding Produkt}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button Grid.Row="2" x:Name="BuyAll" Click="BuyAll_Click" Content="Koupit"/>
     </Grid>
 </Page>

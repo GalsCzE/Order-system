@@ -34,35 +34,51 @@ namespace Order66
         public LoginUser()
         {
             InitializeComponent();
-            GetUser();
         }
-
         private void GetUser()
         {
-            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Users/dotaz.php?Login=" + login + "&Password=" + helo);
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("cache-control", "no-cache");
-            IRestResponse response = client.Execute(request);
-            HttpStatusCode stat = response.StatusCode;
-            if (stat == HttpStatusCode.OK)
+            try
             {
-                IParse parser = new JsonParser();
-                string result = response.Content.Replace(@"[", "");
-                result = result.Replace(@"]", "");
-                u = JsonConvert.DeserializeObject<User>(result);
+                loginPassword.Text = helo;
+                loginLogin.Text = login;
+
+                var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Users/dotaz.php?Login=" + login + "&Password=" + helo);
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("cache-control", "no-cache");
+                IRestResponse response = client.Execute(request);
+                HttpStatusCode stat = response.StatusCode;
+                if (stat == HttpStatusCode.OK)
+                {
+                    IParse parser = new JsonParser();
+                    string result = response.Content.Replace(@"[", "");
+                    result = result.Replace(@"]", "");
+                    u = JsonConvert.DeserializeObject<User>(result);
+                }
+                else
+                {
+                    MessageBox.Show("Špatná stránka!");
+                    MessageBox.Show("Nebude to fungovat");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Špatná stránka!");
-                MessageBox.Show("Nebude to fungovat");
+                MessageBox.Show("Nefunguje ti to co");
             }
         }
 
         private void logining_Click(object sender, RoutedEventArgs e)
         {
-            if (loginLogin.Text == u.Login && loginPassword.Text == u.Password)
+            try
             {
-                BackEnd.frame.Navigate(new ShopList());
+                GetUser();
+                if (loginLogin.Text == u.Login && loginPassword.Text == u.Password)
+                {
+                    BackEnd.frame.Navigate(new ShopList());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Furt ti to nefunguje co");
             }
         }
     }

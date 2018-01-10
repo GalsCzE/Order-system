@@ -49,7 +49,7 @@ namespace Order66
                 MessageBox.Show("Špatná stránka!");
                 MessageBox.Show("Nebude to fungovat");
             }
-}
+        }
 
         private void shopsCart_Click(object sender, RoutedEventArgs e)
         {
