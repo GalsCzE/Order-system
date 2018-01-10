@@ -39,8 +39,8 @@ namespace Order66
         {
             try
             {
-                loginPassword.Text = helo;
-                loginLogin.Text = login;
+                helo=loginPassword.Text;
+                login = loginLogin.Text;
 
                 var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Users/dotaz.php?Login=" + login + "&Password=" + helo);
                 var request = new RestRequest(Method.GET);
@@ -52,6 +52,7 @@ namespace Order66
                     IParse parser = new JsonParser();
                     string result = response.Content.Replace(@"[", "");
                     result = result.Replace(@"]", "");
+                    MessageBox.Show(response.Content);
                     u = JsonConvert.DeserializeObject<User>(result);
                 }
                 else

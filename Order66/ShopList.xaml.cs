@@ -31,11 +31,12 @@ namespace Order66
         public ShopList()
         {
             InitializeComponent();
+            HelloThere();
         }
 
         public async Task HelloThere()
         {
-            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Item/dotaz.php");
+            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Users/dotaz_kart.php");
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             // if (response.ResponseStatus == RestSharp.ResponseStatus.Completed) {
@@ -43,7 +44,7 @@ namespace Order66
             if (stat == HttpStatusCode.OK)
             {
                 IParse parser = new JsonParser();
-                Produkt.ItemsSource = await parser.ParseString<List<Food>>(response.Content);
+                Produkt.ItemsSource = await parser.ParseString<List<KART>>(response.Content);
             }
             else
             {
@@ -64,7 +65,7 @@ namespace Order66
 
         private void BuyAll_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Nemáš peníze!! Nic si nekoupíš!");
         }
     }
 }
