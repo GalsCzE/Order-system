@@ -106,7 +106,14 @@ namespace Order66
 
         private void Itemdelete_Click(object sender, RoutedEventArgs e)
         {
-
+            var result = MessageBox.Show("Smazat " + f.Nazev + " ?", "Deleting item", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Item/Delete.php?ID=" + ID);
+                var request = new RestRequest(Method.GET);
+                IRestResponse response = client.Execute(request);
+                BackEnd.frame.Navigate(new Jidelna(nice));
+            }
         }
     }
 }
