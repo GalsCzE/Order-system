@@ -29,6 +29,20 @@ namespace Order66
     {
         Food f;
         int ID;
+        int nice;
+
+        public InfoItem(int id, int idd)
+        {
+            InitializeComponent();
+            ID = id;
+            nice = idd;
+            GetFood();
+            Itemid.Content = f.ID;
+            Itemnazev.Content = f.Nazev;
+            Itemcena.Content = f.Cena.ToString() + " Kč";
+            Itemdatum.Content = f.Datum.ToString();
+        }
+
         public InfoItem(int id)
         {
             InitializeComponent();
@@ -71,7 +85,7 @@ namespace Order66
             try
             {
                 KART usa = new KART();
-                usa.Uzivatel = 0;
+                usa.Uzivatel = nice;
                 usa.Produkt = f.ID;
 
                 string url = "https://student.sps-prosek.cz/~sevcima14/4ITB/Order-system/Users/Insert_Kart.php";
@@ -88,6 +102,11 @@ namespace Order66
             {
                 MessageBox.Show("Vyskytla se chyba");
             }
+        }
+
+        private void Itemdelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

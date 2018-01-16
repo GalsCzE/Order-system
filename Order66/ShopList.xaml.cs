@@ -27,6 +27,14 @@ namespace Order66
     public partial class ShopList : Page
     {
         Food f;
+        int idw;
+
+        public ShopList(int IDus)
+        {
+            InitializeComponent();
+            HelloThere();
+            idw = IDus;
+        }
 
         public ShopList()
         {
@@ -55,12 +63,12 @@ namespace Order66
 
         private void shopItem_Click(object sender, RoutedEventArgs e)
         {
-            BackEnd.frame.Navigate(new Jidelna());
+            BackEnd.frame.Navigate(new Jidelna(idw));
         }
     
         private void shopInfo_Click(object sender, RoutedEventArgs e)
         {
-            BackEnd.frame.Navigate(new InfoUser());
+            BackEnd.frame.Navigate(new InfoUser(idw));
         }
 
         private void BuyAll_Click(object sender, RoutedEventArgs e)

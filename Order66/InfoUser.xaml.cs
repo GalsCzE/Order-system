@@ -21,9 +21,12 @@ namespace Order66
     /// </summary>
     public partial class InfoUser : Page
     {
-        public InfoUser()
+        int iid;
+
+        public InfoUser(int IDuserss)
         {
             InitializeComponent();
+            iid = IDuserss;
         }
 
         private void back_Click(object sender, RoutedEventArgs e)

@@ -74,7 +74,7 @@ namespace Order66
                 GetUser();
                 if (loginLogin.Text == u.Login && loginPassword.Text == u.Password)
                 {
-                    BackEnd.frame.Navigate(new ShopList());
+                    BackEnd.frame.Navigate(new ShopList(u.ID));
                 }
             }
             catch

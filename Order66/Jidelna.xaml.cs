@@ -26,6 +26,16 @@ namespace Order66
     /// </summary>
     public partial class Jidelna : Page
     {
+
+        int ide;
+
+        public Jidelna(int ida)
+        {
+            InitializeComponent();
+            SHOW();
+            ide = ida;
+        }
+
         public Jidelna()
         {
             InitializeComponent();
@@ -53,18 +63,18 @@ namespace Order66
 
         private void shopsCart_Click(object sender, RoutedEventArgs e)
         {
-            BackEnd.frame.Navigate(new ShopList());
+            BackEnd.frame.Navigate(new ShopList(ide));
         }
 
         private void shopsInfo_Click(object sender, RoutedEventArgs e)
         {
-            BackEnd.frame.Navigate(new InfoUser());
+            BackEnd.frame.Navigate(new InfoUser(ide));
         }
 
         private void Produkt_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int id = ((Food)Produkt_list.SelectedItem).ID;
-            BackEnd.frame.Navigate(new InfoItem(id));
+            BackEnd.frame.Navigate(new InfoItem(id,ide));
         }
 
         private void additem_Click(object sender, RoutedEventArgs e)

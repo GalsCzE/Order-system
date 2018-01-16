@@ -31,5 +31,6 @@
         <Label x:Name="Itemcena" Grid.Row="3" Grid.Column="1" Width="150" ></Label>
         <Label x:Name="Itemdatum" Grid.Row="4" Grid.Column="1" Width="150" ></Label>
         <Button x:Name="Buyitem" Content="Přidat do košíku" Grid.Row="5" Grid.Column="1" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Buyitem_Click"  />
+        <Button x:Name="Itemdelete" Content="Smazat zboží" Grid.Row="5" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Itemdelete_Click" />
     </Grid>
 </Page>
