@@ -38,8 +38,8 @@ namespace Order66
             nice = idd;
             GetFood();
             Itemid.Content = f.ID;
-            Itemnazev.Content = f.Nazev;
-            Itemcena.Content = f.Cena.ToString() + " Kč";
+            Itemnazev.Text = f.Nazev;
+            Itemcena.Text = f.Cena.ToString() + " Kč";
             Itemdatum.Content = f.Datum.ToString();
         }
 
@@ -49,8 +49,8 @@ namespace Order66
             ID = id;
             GetFood();
             Itemid.Content = f.ID;
-            Itemnazev.Content = f.Nazev;
-            Itemcena.Content = f.Cena.ToString() + " Kč";
+            Itemnazev.Text = f.Nazev;
+            Itemcena.Text = f.Cena.ToString() + " Kč";
             Itemdatum.Content = f.Datum.ToString();
         }
 
