@@ -66,5 +66,10 @@ namespace Order66
             int id = ((Food)Produkt_list.SelectedItem).ID;
             BackEnd.frame.Navigate(new InfoItem(id));
         }
+
+        private void additem_Click(object sender, RoutedEventArgs e)
+        {
+            BackEnd.frame.Navigate(new AddItem());
+        }
     }
 }
